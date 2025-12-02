@@ -1,0 +1,34 @@
+class Flashcard:
+    def __init__(self, word, meaning):
+        # This gives each flashcard a word and its meaning
+        self.word = word
+        self.meaning = meaning
+
+    def __str__(self):
+        # This helps Python print the flashcard nicely
+        return f"Word: {self.word} | Meaning : {self.meaning}
+
+
+flashcards_list = []   # To store all flashcards
+
+# Taking input from the user
+while True:
+    word = input("Enter a word: ")
+    meaning = input("Enter its meaning: ")
+
+    # Create a flashcard object
+    card = Flashcard(word, meaning)
+
+    # Save in the list
+    flashcards_list.append(str(card))
+
+    # Ask the user if they want to add more
+    more = input("Do you want to add another flashcard? (yes/no): ")
+    if more.lower() != "yes":
+        break
+
+print("\n  All flashcards")
+i = 0
+while i < len(flashcards_list):
+    print(flashcards_list[i])
+    i += 1
